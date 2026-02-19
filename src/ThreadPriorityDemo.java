@@ -5,7 +5,7 @@ class PriorityThread extends Thread {
     }
 
     public void run() {
-        // No printing here
+        // No task needed
     }
 }
 
@@ -20,16 +20,19 @@ public class ThreadPriorityDemo {
         t2.setPriority(Thread.NORM_PRIORITY);
         t3.setPriority(Thread.MAX_PRIORITY);
 
+        // Start threads
         t1.start();
-        t1.join();   // Wait until t1 finishes
+        t1.join();
 
         t2.start();
-        t2.join();   // Wait until t2 finishes
+        t2.join();
 
         t3.start();
-        t3.join();   // Wait until t3 finishes
+        t3.join();
 
         // Print in required order
         System.out.println("Thread 1 Priority: " + t1.getPriority());
         System.out.println("Thread 2 Priority: " + t2.getPriority());
         System.out.println("Thread 3 Priority: " + t3.getPriority());
+    }
+}
